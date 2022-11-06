@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/addcourse', [StudentController::class, 'add']);
+Route::get('/addstudent', [CourseController::class, 'add']);
+
+Route::get('/deletecourse', [StudentController::class, 'delete']);
+Route::get('/deletestudent', [CourseController::class, 'delete']);
+
+Route::get('/updatecourse', [StudentController::class, 'update']);
+Route::get('/updatestudent', [CourseController::class, 'update']);
