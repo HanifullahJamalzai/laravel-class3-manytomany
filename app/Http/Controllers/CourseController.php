@@ -25,5 +25,12 @@ class CourseController extends Controller
         $course = Course::find(3);
         $course->students()->sync([1,2,5,7,9,3]);
     }
-    
+
+    public function show()
+    {
+        $course = Course::find(3);
+        $data = $course->students;
+        dd($data);
+    }
+
 }

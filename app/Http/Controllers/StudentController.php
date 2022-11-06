@@ -24,4 +24,11 @@ class StudentController extends Controller
         $student = Student::find(1);
         $student->courses()->sync([1,3,2,5,7,9]);
     }
+
+    public function show()
+    {
+        $student = Student::find(1);
+        $data = $student->courses;
+        dd($data);
+    }
 }
